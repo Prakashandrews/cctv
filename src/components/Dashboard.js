@@ -26,6 +26,10 @@ const useStyles = makeStyles({
     pos: {
         marginBottom: 12,
     },
+    imgSize: {
+        borderRadius: 5,
+        width: '100%'
+    }
 });
 export default function Dashboard() {
     const classes = useStyles();
@@ -37,32 +41,32 @@ export default function Dashboard() {
                     justify="flex-start"
                     alignItems="flex-start" spacing={3}>
 
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
                         <Card className={classes.root} variant="outlined">
                         <CardContent>                          
-                            <CardDetails name="DVD WIFI Receiver" desc="Connect your DVD with WIFI" price={1200} imgTag={<img src={hoc} alt="hoc" height="200px" /> }/>
+                            <CardDetails name="DVD WIFI Receiver" desc="Connect your DVD with WIFI" price={1200} imgTag={<img src={hoc} className={classes.imgSize} alt="hoc" height="200px" /> }/>
                         </CardContent>
                         </Card>
                     </Grid>
                     
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
                         <Card className={classes.root} variant="outlined">
                         <CardContent>                           
-                            <CardDetails name="COFE 4G SIM ROUTER" desc="Check your camera view from mobile" price={100} imgTag={<img src={cofe_1} alt="hoc" height="200px" /> }/>
+                            <CardDetails name="COFE 4G SIM ROUTER" desc="Check your camera view from mobile" price={100} imgTag={<img src={cofe_1} className={classes.imgSize} alt="hoc" height="200px" /> }/>
                         </CardContent>
                         </Card>
                     </Grid>
                     
 
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
                         <Card className={classes.root} variant="outlined">
                         <CardContent>                           
-                            <CardDetails name="COFE 4G SIM ROUTER" desc="Check your camera view from mobile" price={800} imgTag={<img src={cofe_2} alt="hoc" height="200px" /> }/>
+                            <CardDetails name="COFE 4G SIM ROUTER" desc="Check your camera view from mobile" price={800} imgTag={<img src={cofe_2} className={classes.imgSize} alt="hoc" height="200px" /> }/>
                         </CardContent>
                         </Card>
                     </Grid>
 
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
                         <Card className={classes.root} variant="outlined">
                         <CardContent>                           
                             <CardDetails name="WIRELESS MOUSE" desc="Connect your Mouse to laptop with wireless" imgTag={<img src={mouse_1} alt="hoc" height="200px" /> }/>

@@ -6,8 +6,29 @@ import hoc from '../images/hoc.jpeg';
 import cofe_1 from '../images/cofe_1.jpeg';
 import cofe_2 from '../images/cofe_2.jpeg';
 import mouse_1 from '../images/mouse_1.jpeg';
-import Card from './CardDetails';
+import CardDetails from './CardDetails';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    root: {
+        minWidth: 275,
+    },
+    bullet: {
+        display: 'inline-block',
+        margin: '0 2px',
+        transform: 'scale(0.8)',
+    },
+    title: {
+        fontSize: 14,
+    },
+    pos: {
+        marginBottom: 12,
+    },
+});
 export default function Dashboard() {
+    const classes = useStyles();
     return (
         <Container maxWidth="lg" style={{ backgroundColor: 'rgb(240 241 243)', height: '100%', minHeight: '100%' }}>
             <Box component="span" m={1} color="info.main">
@@ -16,35 +37,38 @@ export default function Dashboard() {
                     justify="flex-start"
                     alignItems="flex-start" spacing={3}>
 
-                    <Grid item xs={3} sm={3} lg={3} md={3}>
-                        <img src={hoc} alt="hoc" width="100%" height="200px" />
+                    <Grid item xs={12}>
+                        <Card className={classes.root} variant="outlined">
+                        <CardContent>                          
+                            <CardDetails name="DVD WIFI Receiver" desc="Connect your DVD with WIFI" price={1200} imgTag={<img src={hoc} alt="hoc" height="200px" /> }/>
+                        </CardContent>
+                        </Card>
                     </Grid>
-                    <Grid item xs={9} >
-                        <Card name="DVD WIFI Receiver" desc="Connect your DVD with WIFI" price={1200}/>
+                    
+                    <Grid item xs={12}>
+                        <Card className={classes.root} variant="outlined">
+                        <CardContent>                           
+                            <CardDetails name="COFE 4G SIM ROUTER" desc="Check your camera view from mobile" price={100} imgTag={<img src={cofe_1} alt="hoc" height="200px" /> }/>
+                        </CardContent>
+                        </Card>
+                    </Grid>
+                    
+
+                    <Grid item xs={12}>
+                        <Card className={classes.root} variant="outlined">
+                        <CardContent>                           
+                            <CardDetails name="COFE 4G SIM ROUTER" desc="Check your camera view from mobile" price={800} imgTag={<img src={cofe_2} alt="hoc" height="200px" /> }/>
+                        </CardContent>
+                        </Card>
                     </Grid>
 
-                    <Grid item xs={3} sm={3} lg={3} md={3}>
-                        <img src={cofe_1} alt="cofe_1" width="100%" height="200px" price={200}/>
+                    <Grid item xs={12}>
+                        <Card className={classes.root} variant="outlined">
+                        <CardContent>                           
+                            <CardDetails name="WIRELESS MOUSE" desc="Connect your Mouse to laptop with wireless" imgTag={<img src={mouse_1} alt="hoc" height="200px" /> }/>
+                        </CardContent>
+                        </Card>
                     </Grid>
-                    <Grid item xs={9} >
-                        <Card name="COFE 4G SIM ROUTER" desc="Check your camera view from mobile" price={100}/>
-                    </Grid>
-
-                    <Grid item xs={3} sm={3} lg={3} md={3}>
-                        <img src={cofe_2} alt="cofe_2" width="100%" height="200px" />
-                    </Grid>
-                    <Grid item xs={9} >
-                        <Card name="COFE 4G SIM ROUTER" desc="Check your camera view from mobile" price={800}/>
-                    </Grid>
-
-
-                    <Grid item xs={3} sm={3} lg={3} md={3}>
-                        <img src={mouse_1} alt="mouse_1" width="100%" height="200px" />
-                    </Grid>
-                    <Grid item xs={9} >
-                        <Card name="WIRELESS MOUSE" desc="Connect your Mouse to laptop with wireless"/>
-                    </Grid>
-
 
                 </Grid>
             </Box>

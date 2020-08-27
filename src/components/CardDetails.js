@@ -1,4 +1,4 @@
-import CardActions from '@material-ui/core/CardActions';
+import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
@@ -24,7 +24,16 @@ const useStyles = makeStyles({
         color: '#498404'
     },
     imgTag: {
-        paddingTop: 10, 
+        paddingTop: 10,
+    },
+    order: {
+        verticalAlign: 'super'
+    },
+    ProductTitle: {
+        color: '#3c3b76'
+    },
+    lineThrough: {
+        textDecoration: 'line-through'
     }
 });
 export default function CardDetails({ name, desc, price, imgTag }) {
@@ -34,25 +43,27 @@ export default function CardDetails({ name, desc, price, imgTag }) {
             <Typography className={classes.title} color="textSecondary" align="left" gutterBottom>
                 Xtreamer Technology
                 </Typography>
-            <Typography variant="h6" component="h2" align="left">
+            <Typography variant="h6" className={classes.ProductTitle}  align="left">
                 {name || ''}
             </Typography>
-            <Typography variant="h5" className={classes.imgTag}  component="h2" align="left">
+            <Typography variant="h5" className={classes.imgTag}  align="left">
                 {imgTag}
             </Typography>
             <Typography className={classes.pos} variant="body2" color="textSecondary" align="left">
                 {desc || ''}
             </Typography>
-            <Typography variant="body1" align="left" className={classes.priceColor}>
-                ₹ {price || 'Not Available'}
+            <Typography variant="h6" align="left" className={classes.priceColor}>
+                ₹ {price || 'Not Available'} 
             </Typography>
 
-            <CardActions>
-                
-                    <img alt="Suresh" src={whatsapp} height="50px" width="50px" /> <a href="https://wa.me/+918124031111?product=test">Whatsapp Me</a>
-                
-            </CardActions>
-        </>
+            <Typography variant="body3" color="textSecondary" align="left" className={classes.lineThrough}>
+                ₹ {price + 200 || ''} 
+            </Typography>
 
+            <Typography variant="body1" className={classes.imgTag} component="h2" align="left">
+                <img alt="Suresh" src={whatsapp} height="30px" width="30px" />
+                <Link href="https://wa.me/+918124031111?product=test" className={classes.order} >Order Now</Link>
+            </Typography>
+        </>
     )
 } 

@@ -28,8 +28,13 @@ const useStyles = makeStyles({
     },
     imgSize: {
         borderRadius: 5,
-        width: '100%'
-    }
+        width: '100%',                
+        transition: 'transition 2s',        
+        '&:hover' : {
+            transform: 'scale(1.2)'
+        }
+    },
+    
 });
 export default function Dashboard() {
     const classes = useStyles();
@@ -69,7 +74,7 @@ export default function Dashboard() {
                     <Grid item xs={12} sm={12} md={3} lg={3}>
                         <Card className={classes.root} variant="outlined">
                         <CardContent>                           
-                            <CardDetails name="WIRELESS MOUSE" desc="Connect your Mouse to laptop with wireless" imgTag={<img src={mouse_1} alt="hoc" height="200px" /> }/>
+                            <CardDetails name="WIRELESS MOUSE" desc="Connect your Mouse to laptop with wireless" imgTag={<img src={mouse_1} className={classes.imgSize} alt="hoc" height="200px" /> }/>
                         </CardContent>
                         </Card>
                     </Grid>

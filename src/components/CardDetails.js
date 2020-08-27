@@ -45,7 +45,7 @@ export default function CardDetails({name, desc, price}) {
             </CardContent>
             <CardActions>
                 <Button size="small">
-                    <img alt="Suresh" src={whatsapp} height="50px" width="50px" /> <a href="https://wa.me/+918124031111">Whatsapp Me</a>
+                    <img alt="Suresh" src={whatsapp} height="50px" width="50px" /> <a href="https://wa.me/+918124031111?product=test">Whatsapp Me</a>
                 </Button>
             </CardActions>
         </Card>
